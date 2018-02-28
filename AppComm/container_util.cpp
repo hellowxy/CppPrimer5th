@@ -9,6 +9,13 @@ void output_vector(const vector<int> &vec, ostream &os){
     os << endl;
 }
 
+void output_vector(const vector<string> &vec, ostream &os){
+    for(vector<string>::const_iterator it = vec.begin(); it != vec.end(); it++){
+        os << *it << " ";
+    }
+    os << endl;
+}
+
 void output_list(const list<int> &l, ostream &os){
     for(list<int>::const_iterator it = l.begin(); it != l.end(); it++){
         os << *it << " ";
