@@ -14,5 +14,8 @@ class StrBlobPtr{
         StrBlobPtr(StrBlob &a, std::size_t sz = 0):wptr(a.data), curr(sz){}
         std::string& deref() const;
         StrBlobPtr& incr();
+        bool neq(StrBlobPtr& other){
+            return curr == other.curr;
+        }
 };
 #endif

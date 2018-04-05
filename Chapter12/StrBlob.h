@@ -4,8 +4,7 @@
 #include<string>
 #include<memory>
 #include<initializer_list>
-#include"StrBlobPtr.h"
-//class StrBlobPtr;
+class StrBlobPtr;
 class StrBlob{
     friend class StrBlobPtr;
     public:
@@ -20,13 +19,8 @@ class StrBlob{
         std::string& front() const;
         std::string& back();
         std::string& back() const;
-        StrBlobPtr begin(){
-            return StrBlobPtr(*this);
-        }
-        StrBlobPtr end(){
-            StrBlobPtr ret(*this, data->size);
-            return ret;
-        }
+        StrBlobPtr begin();
+        StrBlobPtr end();
 
     private:
         std::shared_ptr<std::vector<std::string>> data;

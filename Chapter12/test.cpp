@@ -1,15 +1,22 @@
 #include<memory>
 #include<iostream>
+#include"StrBlob.h"
+#include"StrBlobPtr.h"
+#include<string>
 using namespace std;
 int main(){
-    int ix = 1024, *pi = &ix, *pi2 = new int(2048);
-    typedef unique_ptr<int> IntP;
-    //IntP p0(ix);
-    //IntP p1(pi);
-    IntP p2(pi2);
-    //IntP p3(&ix);
-    
-    IntP p5(p2.get());
-    cout << *p5 ;
+    StrBlob b1;
+    {
+        StrBlob b2({"hello", "world"});
+        b1 = b2;
+    }
+    cout << b1.size() << endl;
+
+    StrBlobPtr p = b1.begin();
+    cout << p.deref() << endl;
+    p.incr();
+    cout << p.deref() << endl;
+     
     return 0;
+
 }

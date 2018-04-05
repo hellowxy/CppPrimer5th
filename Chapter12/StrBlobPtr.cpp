@@ -1,6 +1,7 @@
 #include<string>
 #include<memory>
 #include<vector>
+#include"StrBlob.h"
 #include"StrBlobPtr.h"
 using namespace std;
 

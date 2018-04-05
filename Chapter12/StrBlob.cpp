@@ -1,20 +1,19 @@
 #include<string>
 #include<vector>
 #include"StrBlob.h"
+#include"StrBlobPtr.h"
 #include<memory>
 #include<iostream>
 using namespace std;
 
-int main(){
-    StrBlob b1;
-    {
-        StrBlob b2({"hello", "world"});
-        b1 = b2;
-    }
-    cout << b1.size() << endl;
-    return 0;
-
+StrBlobPtr StrBlob::begin(){
+    return StrBlobPtr(*this);
 }
+
+StrBlobPtr StrBlob::end(){
+    return StrBlobPtr(*this, data->size());    
+}
+
 StrBlob::StrBlob():data(make_shared<vector<string>>()){
 
 }
