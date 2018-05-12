@@ -20,5 +20,10 @@ class HasPtr{
             }
             return *this;
         }
+
+        ~HasPtr(){
+            delete ps;
+            ps = nullptr;
+        }
 }
 #endif
