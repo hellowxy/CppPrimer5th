@@ -2,8 +2,12 @@
 #define BLOB_H
 #include<vector>
 #include<memory>
-template<typename T> class Blob
+template<typename> class BlobPtr;
+
+template<typename T> 
+class Blob
 {
+    friend class BlobPtr<T>;
     public:
         typedef T value_type;
         typedef typename std::vector<T>::size_type size_type;

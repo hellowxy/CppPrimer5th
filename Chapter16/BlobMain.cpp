@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include"Blob.h"
+#include"BlobPtr.h"
 
 int main()
 {
@@ -12,15 +13,12 @@ int main()
     strBlob.push_back(" ");
     strBlob.push_back("world");
     strBlob.push_back("!!!");
-    for(Blob<string>::size_type i = 0; i < strBlob.size(); i++)
+  
+
+    BlobPtr<string> ptr(strBlob);
+    while(!ptr.past_of_end())
     {
-        cout << strBlob[i];
-    }
-    cout << endl;
-    while(!strBlob.empty())
-    {
-        cout << strBlob.back();
-        strBlob.pop_back();
+        cout << *ptr++;
     }
     cout << endl;
     return 0;  

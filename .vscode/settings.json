@@ -17,6 +17,7 @@
         "xstring": "cpp",
         "xtree": "cpp",
         "type_traits": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "stdexcept": "cpp"
     }
 }
